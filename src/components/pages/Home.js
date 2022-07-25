@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row"
 
 const Home = () => {
     const posts = useSelector(getAllPosts);
+    console.log(posts)
     
     return (
         <Container>

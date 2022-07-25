@@ -1,6 +1,12 @@
+import PostForm from "../features/PostForm";
+import AddPostForm from "../views/AddPostForm";
+
 const PostAdd = ()=>{
 return(
-    <h1>Hello</h1>
+    <div>
+    <h1>Add post</h1>
+    <AddPostForm />
+    </div>
 )
 }
 export default PostAdd;

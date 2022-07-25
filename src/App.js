@@ -27,6 +27,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="*" element={<NotFound/>}/>
         </Routes>
+       
         <Footer/>
         </Container>
     );  
