@@ -14,7 +14,7 @@ const AddPostForm = () => {
     const handleSubmit = post => {
       myDispatch(addPost(post));
       navigate('/');
-      console.log(handleSubmit)
+      
     };
   
     return (

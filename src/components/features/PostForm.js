@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import  propTypes from 'prop-types'
+
 
 
 const PostForm = ({action, actionText, ...props })=>{

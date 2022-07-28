@@ -1,5 +1,5 @@
 import { useParams } from 'react-router'
-import { getPostById, removePost } from '../../redux/postsRedux';
+import { getPostById } from '../../redux/postsRedux';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
@@ -11,6 +11,8 @@ import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import PostDelete from './PostDelete';
+import EditPost from './PostEdit';
+import PostEditForm from '../features/PostEditForm';
 
 
 
@@ -46,8 +48,8 @@ const PostSolo = () => {
                 </Card>
 
                 <div className="d-flex justify-content-between">
-                    <Nav.Link as={NavLink} to="/post/edit/:postId" className="px-0" ><Button variant="outline-info">Edit</Button></Nav.Link>
-                    <Button variant="outline-danger" onClick={handleShow} >Delete</Button>
+                    <Nav.Link as={NavLink} to={"/post/edit/" + postId} className="px-0" ><Button variant="outline-info">Edit</Button></Nav.Link>
+                    <Nav.Link as={NavLink} to={"/post/" + postId} className="ps-2"><Button variant="outline-danger" onClick={handleShow} >Delete</Button></Nav.Link>
                     <Modal
                         show={show}
                         onHide={handleClose}
