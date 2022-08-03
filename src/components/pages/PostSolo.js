@@ -43,7 +43,8 @@ const PostSolo = () => {
 
 
                         </Card.Text>
-                        {postData.content}
+                        
+                        <p dangerouslySetInnerHTML={{ __html: postData.content }} />
                     </Card.Body>
                 </Card>
 
