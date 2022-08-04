@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import { useForm } from "react-hook-form";
-import DatePicker from "react-datepicker";
+
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -20,7 +20,7 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
   const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
   const [content, setContent] = useState(props.content || '');
-  const [startDate, setStartDate] = useState(new Date());
+  
   const [contentError, setContentError] = useState(false);
 
 
@@ -29,8 +29,8 @@ const PostForm = ({ action, actionText, ...props }) => {
 
   const handleSubmit = () => {
     setContentError(!content)
-    setStartDate(!publishedDate)
-    if (content && publishedDate) {
+    
+    if (content ) {
       action({ title, author, publishedDate, shortDescription, content });
     }
   };
@@ -55,7 +55,7 @@ const PostForm = ({ action, actionText, ...props }) => {
 
       <Form.Group className="mb-3" controlId="formAuthor">
         <Form.Label>Published</Form.Label>
-        <DatePicker className="form-control" selected={startDate} onChange={(date: Date) => setStartDate(date)} />
+        <Form.Control type="date" value={publishedDate} onChange={e => setPublishedDate(e.target.value)} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -88,4 +88,3 @@ const PostForm = ({ action, actionText, ...props }) => {
 
 
 export default PostForm;
-
