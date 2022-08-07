@@ -7,6 +7,7 @@ import Button from "react-bootstrap/esm/Button";
 import { NavLink } from 'react-router-dom'
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/Row"
+import shortid from "shortid";
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
                     id={post.id}
                     title={post.title}
                     shortDescription={post.shortDescription}
+                    category={post.category}
                     content={post.mainContent}
                     publishedDate={post.publishedDate}
                     author={post.author}>

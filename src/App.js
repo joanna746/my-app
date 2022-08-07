@@ -9,6 +9,8 @@ import NotFound from './components/pages/NotFound';
 import Footer from './components/views/Footer';
 import {Container} from 'react-bootstrap'
 import Header from './components/views/Header';
+import Categories from './components/pages/Categories';
+import Category from './components/pages/Category';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="/post/edit/:postId" element={<PostEdit/>} />
           <Route path="/post/delete/:postId" element={<PostDelete/>} />
           <Route path="/about" element={<About/>} />
+          <Route path="/categories" element={< Categories />} />
+          <Route path="/categories/:category"element={<Category/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
        

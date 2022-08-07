@@ -22,6 +22,7 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [content, setContent] = useState(props.content || '');
   
   const [contentError, setContentError] = useState(false);
+  const [category,setCategory]= useState(props.category || '');
 
 
 
@@ -31,7 +32,7 @@ const PostForm = ({ action, actionText, ...props }) => {
     setContentError(!content)
     
     if (content ) {
-      action({ title, author, publishedDate, shortDescription, content });
+      action({ title, author, publishedDate,category, shortDescription, content });
     }
   };
 
@@ -57,6 +58,13 @@ const PostForm = ({ action, actionText, ...props }) => {
         <Form.Label>Published</Form.Label>
         <Form.Control type="date" value={publishedDate} onChange={e => setPublishedDate(e.target.value)} />
       </Form.Group>
+      <Form.Label>Category</Form.Label>
+      <Form.Select aria-label="Default select example"value={category} onChange={e => setCategory(e.target.value)} >
+      <option>Open this select menu</option>
+      <option value="Przeciwzapalne">Przeciwzapalne</option>
+      <option value="Trawienie">Trawienie</option>
+      <option value="Inne">Inne</option>
+    </Form.Select>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Short Description</Form.Label>

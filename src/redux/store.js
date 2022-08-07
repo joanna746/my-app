@@ -4,6 +4,7 @@ import postsRedux from './postsRedux';
 
 const subreducers = {
   posts: postsRedux,
+  categories:postsRedux,
 }
 
 const reducer = combineReducers(subreducers);
